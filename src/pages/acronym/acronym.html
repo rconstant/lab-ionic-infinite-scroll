@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ acronym.name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item no-lines>
+    <h3>Definition : </h3>
+    <p>{{ acronym.definition }}</p>
+  </ion-item>
+
+  <ion-item no-lines padding-vertical="10px">
+    <h3>Informations complémentaires : </h3>
+    <p>{{ acronym.description }}</p>
+  </ion-item>
+
+  <button ion-button color="primary" block (click)="navigate()" *ngIf="acronym.link != null" padding-vertical="10px">Voir le site</button>
+</ion-content>
+
+<ion-footer padding-horizontal="10px">
+  <button ion-button color="danger" block (click)="report()">Signaler une erreur</button>
+</ion-footer>
